@@ -1,0 +1,16 @@
+# Python virtual environments & cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node modules (frontend/dist is tracked for 1-click offline usage)
+frontend/node_modules/
+node_modules/
+
+# OS & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

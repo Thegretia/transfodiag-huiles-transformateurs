@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="description" content="Application Locale & PWA de Collecte, Diagnostic IEEE C57.104 / Triangle de Duval 1 et Reporting Multi-Formats pour Huiles de Transformateurs" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>TransfoDiag Pro — Diagnostic DGA & Huiles de Transformateurs (IEEE C57.104 / Duval 1)</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="/app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

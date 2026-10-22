@@ -1,0 +1,286 @@
+:root {
+  --bg-dark: #020617;
+  --bg-panel: #0f172a;
+  --bg-card: #1e293b;
+  --border: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --blue: #2563eb;
+  --blue-light: #38bdf8;
+  --green: #10b981;
+  --amber: #f59e0b;
+  --red: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(2, 6, 23, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1e293b;
+  padding: 12px 24px;
+}
+
+.topbar-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nav-btn {
+  background: transparent;
+  color: #cbd5e1;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.15s ease;
+}
+
+.nav-btn:hover {
+  background: #0f172a;
+  color: #fff;
+}
+
+.nav-btn.active {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.35);
+}
+
+.badge-count {
+  background: #f59e0b;
+  color: #020617;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  gap: 20px;
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.kpi-card {
+  background: var(--bg-panel);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 18px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+}
+
+.kpi-card.active-all { border: 2px solid #3b82f6; }
+.kpi-card.active-bon { border: 2px solid #10b981; background: rgba(16, 185, 129, 0.08); }
+.kpi-card.active-surv { border: 2px solid #f59e0b; background: rgba(245, 158, 11, 0.08); }
+.kpi-card.active-crit { border: 2px solid #ef4444; background: rgba(239, 68, 68, 0.08); }
+
+.eq-card {
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eq-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+.eq-card.status-BON { border: 2px solid rgba(16, 185, 129, 0.45); }
+.eq-card.status-SURVEILLANCE { border: 2px solid rgba(245, 158, 11, 0.65); }
+.eq-card.status-CRITIQUE { border: 2px solid rgba(239, 68, 68, 0.75); }
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pill-BON { background: rgba(16, 185, 129, 0.18); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+.pill-SURVEILLANCE { background: rgba(245, 158, 11, 0.18); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
+.pill-CRITIQUE { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.45); }
+
+.thi-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.thi-bar-fill.BON { background: #10b981; height: 100%; }
+.thi-bar-fill.SURVEILLANCE { background: #f59e0b; height: 100%; }
+.thi-bar-fill.CRITIQUE { background: #ef4444; height: 100%; }
+
+input, select, textarea {
+  background: #020617;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3b82f6;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.btn:hover { opacity: 0.92; }
+.btn-blue { background: #2563eb; color: #fff; }
+.btn-green { background: #059669; color: #fff; }
+.btn-red { background: #dc2626; color: #fff; }
+.btn-amber { background: #d97706; color: #fff; }
+.btn-purple { background: #7c3aed; color: #fff; }
+.btn-slate { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; }
+
+.touch-btn {
+  padding: 16px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  border: 2px solid #334155;
+  background: #020617;
+  color: #cbd5e1;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.touch-btn.selected-blue { background: #1d4ed8; border-color: #60a5fa; color: #fff; }
+.touch-btn.selected-green { background: #047857; border-color: #34d399; color: #fff; }
+.touch-btn.selected-amber { background: #b45309; border-color: #fbbf24; color: #fff; }
+.touch-btn.selected-red { background: #b91c1c; border-color: #f87171; color: #fff; }
+.touch-btn.selected-pink { background: #be185d; border-color: #f472b6; color: #fff; }
+
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+table.data-table th {
+  background: #020617;
+  color: #94a3b8;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #1e293b;
+  font-weight: 700;
+}
+
+table.data-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.7);
+}
+
+table.data-table tr:hover td {
+  background: rgba(30, 41, 59, 0.4);
+}
